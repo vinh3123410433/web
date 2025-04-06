@@ -8,13 +8,14 @@ import {
   AiOutlineCustomerService, 
   AiOutlineContacts 
 } from "react-icons/ai";
-
+// const [biến, hàmCậpNhật] = useState(giáTrịKhởiTạo);
 const App = () => {
+  // các state có thể change trong quá trình sử dụng web
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-
+  // một mảng object hiển thị list các feature của web
   const features = [
     {
       title: "Innovative Solutions",
@@ -32,6 +33,19 @@ const App = () => {
       icon: <AiOutlineInfoCircle className="w-8 h-8" />
     }
   ];
+ 
+//   // 1. Khai báo component dưới dạng hàm
+// const TênComponent = () => {
+//   // (nếu cần: khai báo biến, useState, useEffect,...)
+
+//   // 2. Trả về giao diện (JSX)
+//   return (
+//     <div>...</div>
+//   );
+// };
+
+// // 3. (nếu cần) export để dùng nơi khác
+// export default TênComponent;
 
   const LoginForm = () => {
     const [email, setEmail] = useState("");
@@ -42,8 +56,9 @@ const App = () => {
         <div className="bg-white dark:bg-gray-800 p-8 rounded-lg w-full max-w-md">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold dark:text-white">Login</h2>
+            {/* FiX là icon dấu "X" (nút đóng) từ thư viện react-icons/fi (Feather Icons). */}
             <button onClick={() => setShowLogin(false)}>
-              <FiX className="w-6 h-6" />
+              <FiX className="w-6 h-6" /> 
             </button>
           </div>
           <form className="space-y-4">
@@ -52,7 +67,7 @@ const App = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)} // cập nhật lại state
                 className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
