@@ -56,6 +56,6 @@ npm run dev
 ### Backend
 - Node.js
 - Express
-- MongoDB
+- MYSQL
 - Cors
 - Dotenv 
