@@ -48,15 +48,25 @@ const App = () => {
 // export default TênComponent;
 
   const LoginForm = () => {
+   // lưu giá trị đơn
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     return (
+      // fixed inset-0: phủ kín màn hình
+      // bg-black bg-opacity-50: nền đen mờ
+      // flex items-center justify-center: canh giữa modal
+      // z-50: ưu tiên hiển thị modal phía trên
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        {/*  bg-white dark:bg-gray-800: màu nền sáng/tối tùy chế độ
+         p-8: padding
+         rounded-lg: bo góc
+         w-full max-w-md: chiều rộng tối đa */}
         <div className="bg-white dark:bg-gray-800 p-8 rounded-lg w-full max-w-md">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold dark:text-white">Login</h2>
-            {/* FiX là icon dấu "X" (nút đóng) từ thư viện react-icons/fi (Feather Icons). */}
+            {/* FiX là icon dấu "X" (nút đóng) từ thư viện react-icons/fi (Feather Icons). 
+            khi người dùng ấn vào icon này sẽ gọi userState để đổi giá trị hiện tại thành false và đóng thanh login*/}
             <button onClick={() => setShowLogin(false)}>
               <FiX className="w-6 h-6" /> 
             </button>
